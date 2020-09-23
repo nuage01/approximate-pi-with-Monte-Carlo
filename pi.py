@@ -11,7 +11,7 @@ opt = [5000, 5000, 10000]
 N = 1000000
 global COMPTEUR
 COMPTEUR = 0
-def calcul(N,COMPTEUR):
+def calcul(N,COMPTEUR, **args):
     for i in range(N):
         x = random()
         y = random()
@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     with open('results.csv', mode='w') as results:
         results_write = csv.writer(results, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        results_write.writerow(["calcul de pi avec joblib (multi threads)", "calcul de pi avec multiprocesing (cpu)" ])
+        results_write.writerow(["pi_joblib", "pi_multiprocesing" ])
         for n in range(20):
             calculated = sum(result)
             Pi = 4 * calculated / sum(opt)
