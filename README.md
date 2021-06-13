@@ -1,2 +1,0 @@
-# dipou
-first repository
